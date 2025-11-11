@@ -251,10 +251,10 @@ const Seat = () => {
             </table>
           </div>
         )}
-
+      <Fotter />
       </div>
 
-      <Fotter />
+      
     </>
   );
 };

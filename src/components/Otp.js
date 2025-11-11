@@ -68,6 +68,9 @@ const Otp = ({ mobile, otpToken, doctorId }) => {
       setError1("OTP should be 4–6 digits");
       return;
     }
+console.log(mobile)
+    console.log(otpToken)
+    console.log(doctorId)
 
     if (!mobile || !otpToken || !doctorId) {
       setError2("Missing data. Cannot verify OTP.");
@@ -106,6 +109,10 @@ const Otp = ({ mobile, otpToken, doctorId }) => {
         if (doctorId) localStorage.setItem("doctorId", doctorId);
         if (firstName) localStorage.setItem("firstName", firstName);
         if (lastName) localStorage.setItem("lastName", lastName);
+
+
+        console.log(firstName);
+        console.log(lastName);
 
         navigate("/dashboard", { replace: true });
       } else {

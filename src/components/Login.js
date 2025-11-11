@@ -6,7 +6,7 @@ import { useAuth } from "./AuthContext";
 const Login = () => {
   const { setIsLoggedIn } = useAuth();
 
-   const [mobile, setMobile] = useState('');
+  const [mobile, setMobile] = useState('');
   const [otpToken, setOtpToken] = useState('');
   const [doctorId, setDoctorId] = useState('');
   const [interestedId, setInterestedId] = useState('');
@@ -33,9 +33,17 @@ const Login = () => {
     return () => clearInterval(timer);
   }, []);
 
+  // Autofocus on mobile input
   useEffect(() => {
     mobileInputRef.current?.focus();
   }, []);
+
+  // ✅ FIX: Move login update into useEffect (not inside render)
+  useEffect(() => {
+    if (showOtp) {
+      setIsLoggedIn(true);
+    }
+  }, [showOtp]);
 
   const validateMobile = (n) => /^[6-9]\d{9}$/.test(n);
 
@@ -74,10 +82,11 @@ const Login = () => {
       const dId = doctorInfo?.doctorId;
 
       if (status === 'Y') {
+        setMobile(trimmed);         // ✅ FIXED
         setOtpToken(token);
         setDoctorId(dId);
         setShowOtp(true);
-        setInterestedId('')
+        setInterestedId('');
         setServerMessage(message || 'OTP sent successfully!');
       } else {
         setServerMessage(message || 'No account found with this mobile number.');
@@ -88,8 +97,9 @@ const Login = () => {
       setLoading(false);
     }
   };
+
+  // ✅ Only render OTP screen, do NOT update state here
   if (showOtp) {
-    setIsLoggedIn(true);
     return <Otp mobile={mobile} otpToken={otpToken} doctorId={doctorId} interestedId={interestedId} />;
   }
 
@@ -106,29 +116,27 @@ const Login = () => {
         </nav>
       </header>
 
-      {/* HERO SECTION */}
+      {/* HERO */}
       <section className="hero-section">
 
         {/* LEFT */}
         <div className="left-side">
           <div className="left-inner">
-
-            {/* DOTS */}
             <div className="dots">
               {images.map((_, i) => (
                 <span key={i} className={current === i ? "dot active" : "dot"}></span>
               ))}
             </div>
 
-            {/* HEADING */}
-            <p className="hero-heading">Learn, revise and excel – the ultimate learning platform for<br/> your medical journey</p>
+            <p className="hero-heading">
+              Learn, revise and excel – the ultimate learning platform for<br />your medical journey
+            </p>
 
-            {/* IMAGE */}
             <img src={images[current]} className="hero-illustration" alt="illustration" />
           </div>
         </div>
 
-        {/* RIGHT - LOGIN */}
+        {/* RIGHT */}
         <div className="right-side">
           <div className="login-card">
             <h3>Let's Get Started</h3>

@@ -3,6 +3,8 @@ import './Dashboard.css'
 import { replace, useNavigate } from 'react-router-dom'
 
 const Dashboard = () => {
+  const firstName = localStorage.getItem("firstName") || "";
+  const lastName = localStorage.getItem("lastName") || "";
     const navigate=useNavigate()
     const handle=()=>{
         navigate("/NeetPg",{replace:true})
@@ -14,7 +16,7 @@ const Dashboard = () => {
     }
   return (
     <div className='main'>
-      <h2>WELCOME TO Dashboard</h2>
+      <h2>WELCOME TO Dashboard {firstName} {lastName}</h2>
       <p>Please Select your course</p>
       <div className='btn'>
         <button onClick={handle}>NEET PG</button>
