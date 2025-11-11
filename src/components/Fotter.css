@@ -1,0 +1,115 @@
+.footer-container {
+  background-color: #7CA3E6;
+  color: white;
+  padding: 40px 20px;
+  font-family: "Inter", sans-serif;
+}
+
+/* ✅ Top Menu */
+.footer-top-menu {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+/* ✅ Simple Lift-Up Animation — No color, no glow */
+.lift-item {
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.lift-item:hover {
+  transform: translateY(-6px);
+}
+
+/* ✅ Middle Row → Always 1 Line */
+.footer-middle-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: 100%;
+  gap: 20px;
+}
+
+/* LEFT – Email */
+.footer-email {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 22px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.footer-email:hover {
+  transform: translateY(-6px);
+}
+
+.footer-handshake {
+  font-size: 36px;
+  color: white;
+}
+
+/* CENTER – Social Icons */
+.footer-social {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+.social-icon {
+  font-size: 28px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.social-icon:hover {
+  transform: translateY(-6px);
+}
+
+/* RIGHT – Phone */
+.footer-phone {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 22px;
+  font-weight: 600;
+  gap: 12px;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.footer-phone:hover {
+  transform: translateY(-6px);
+}
+
+.footer-phone-icon {
+  font-size: 30px;
+  color: black;
+}
+
+/* ✅ MOBILE RESPONSIVE */
+@media (max-width: 900px) {
+  .footer-middle-row {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .footer-phone,
+  .footer-email {
+    justify-content: center;
+  }
+}

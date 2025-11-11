@@ -1,0 +1,285 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* PAGE BACKGROUND */
+.page-container {
+  background: #7da2f3;
+  width: 100%;
+  min-height: auto;
+  font-family: "Inter", sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+  background: #edf2fd;
+  padding: 14px 60px;
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  gap: 450px;
+}
+.nav-logo {
+  height: 75px;
+  width: auto;
+  object-fit: contain;
+  padding: 5px 0;
+  padding-left: 0px;
+}
+
+.nav-right a {
+  margin-left: 32px;
+  color: #0b1437;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 17px;
+}
+.nav-right a:hover{
+  color: #7da2f3;
+}
+
+/* HERO SECTION FIXED LAYOUT */
+.hero-section {
+  display: grid;
+  grid-template-columns: 1fr 480px;
+  align-items: center;
+  gap: 80px;
+  padding: 60px 80px;
+}
+
+/* LEFT SIDE */
+.left-side {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.left-inner {
+  width: 100%;
+  max-width: 750px;
+  text-align: center;
+}
+
+/* DOTS */
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.dot {
+  width: 45px;
+  height: 7px;
+  background: #bfcdf5;
+  opacity: 0.4;
+  border-radius: 4px;
+}
+.dot.active {
+  opacity: 1;
+  background: white;
+}
+
+/* HEADING (ONE LINE FIX) */
+.hero-heading {
+  color: white;
+  font-size: clamp(20px, 2.2vw, 32px);
+  font-weight: 200;
+  white-space: nowrap;     /* ✅ stays on ONE LINE */
+  overflow:visible;        /* hides extra overflow */
+  margin-bottom: 25px;
+}
+
+/* MAIN IMAGE */
+.hero-illustration {
+  width: 100%;
+  max-width: 550px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+/* RIGHT SIDE */
+.right-side {
+  display: flex;
+  justify-content: center;
+}
+
+/* LOGIN CARD */
+.login-card {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.15);
+}
+.login-card h3 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+/* INPUT ROW */
+.input-row {
+  display: flex;
+  align-items: center;
+  border: 1px solid #cfd6ec;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.country-code {
+  background: #f4f7ff;
+  padding: 12px 16px;
+  font-weight: 600;
+  color: #0b1437;
+}
+.input-row input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 12px;
+  font-size: 16px;
+}
+
+/* BUTTON */
+button {
+  width: 100%;
+  background: #7da2f3;
+  padding: 14px;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  font-size: 17px;
+  font-weight: 600;
+  margin-top: 15px;
+  cursor: pointer;
+}
+button:hover {
+  background: #5e82e3;
+}
+
+/* MESSAGES */
+.error-text {
+  color: #e11d48;
+  margin-top: 8px;
+}
+.server-text {
+  color: #f20f0f;
+  margin-top: 8px;
+}
+.policy {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+/* ✅ RESPONSIVE FIX */
+@media (max-width: 960px) {
+  .hero-section {
+    grid-template-columns: 1fr;
+    text-align: left;
+    gap: 50px;
+    /* padding: 40px 20px; */
+  }
+
+  .hero-heading {
+    white-space: normal; /* allow wrap on mobile */
+    font-size: 26px;
+  }
+
+  .hero-illustration {
+    max-width: 380px;
+  }
+}
+
+/* OTP input */
+.input1 {
+  width: 100%;
+  padding: 14px;
+  font-size: 18px;
+  border-radius: 8px;
+  border: 1px solid #cfd6ec;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Spinner */
+.spinner {
+  margin: 15px auto 0 auto;
+  border: 4px solid rgba(255,255,255,0.3);
+  border-top-color: #7da2f3;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+
+
+
+/* RESEND SECTION */
+.resend-area {
+  margin: 15px 0 20px 0;
+  text-align: center;
+}
+
+/* Timer text */
+.resend-timer {
+  color: #444;
+  font-size: 14px;
+}
+
+.resend-ready {
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* ✅ BUTTON ROW (Always side-by-side) */
+.resend-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+}
+
+/* ✅ BUTTON STYLE */
+.resend-btn {
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;         /* ✅ Stops text from breaking */
+}
+
+/* SMS Button */
+.sms-btn {
+  background: #7da2f3;
+  color: white;
+}
+
+/* WhatsApp Button */
+.whatsapp-btn {
+  background: #25d366;
+  color: white;
+}
+
+/* ✅ Mobile fix */
+@media (max-width: 480px) {
+  .resend-buttons {
+    gap: 10px;
+  }
+
+  .resend-btn {
+    padding: 9px 12px;
+    font-size: 13px;
+  }
+}

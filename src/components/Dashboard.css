@@ -1,0 +1,56 @@
+/* Main Container */
+.main {
+  height: 100vh;
+  width: 100%;
+  background-color: #7ca3e6;   /* Same theme color as other pages */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;     /* Center vertically */
+  align-items: center;         /* Center horizontally */
+  text-align: center;
+  font-family: "Inter", sans-serif;
+}
+
+/* Heading */
+.main h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+  padding-right: 450px;
+}
+
+/* Sub Text */
+.main p {
+  font-size: 18px;
+  color: #f0f0f0;
+  margin-bottom: 25px;
+}
+
+/* Buttons Container */
+.btn {
+  display: flex;
+  gap: 25px;          /* Space between buttons */
+}
+
+/* Buttons */
+.btn button {
+  padding: 12px 35px;
+  width: 180px;        /* ✅ Same width */
+  background-color: #ffffff;
+  color: #2d3e5e;
+  border: none;
+  border-radius: 8px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.15);
+  transition: all 0.2s ease-in-out;
+}
+
+/* Hover Effect */
+.btn button:hover {
+  background-color: #2d3e5e;
+  color: #fff;
+  transform: translateY(-3px);
+}

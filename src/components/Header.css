@@ -1,0 +1,29 @@
+.header{
+    margin: 0;
+    display: flex;
+    background-color: rgb(229, 240, 247);
+}
+img{
+    width: 88px;
+    height: auto;
+    padding-left: 30px;
+    padding-top: 4px;
+    
+}
+h2{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    padding-left: 500px;
+    color: rgb(129, 159, 250);
+}
+
+.header{
+  position: fixed;     /* ✅ freezes header */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;        /* ✅ stays above other content */
+  background: rgb(228, 239, 244);   /* ✅ important! prevent transparency */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* optional */
+}
