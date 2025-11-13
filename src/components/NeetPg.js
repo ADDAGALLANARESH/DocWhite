@@ -66,6 +66,8 @@ function NeetPg() {
   };
 
   return (
+    <div className="body">
+      <div className="body1">
     <div className="seat-page">
       <Header1 />
 
@@ -261,8 +263,8 @@ function NeetPg() {
           </table>
         </div>
       )}
-
-      <Fotter />
+    </div></div>
+    <Fotter />
     </div>
   );
 }

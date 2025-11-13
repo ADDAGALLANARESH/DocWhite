@@ -117,6 +117,7 @@ const Login = () => {
       </header>
 
       {/* HERO */}
+      <div className="bodydiv">
       <section className="hero-section">
 
         {/* LEFT */}
@@ -166,7 +167,7 @@ const Login = () => {
           </div>
         </div>
 
-      </section>
+      </section></div>
     </div>
   );
 };

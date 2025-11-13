@@ -1,29 +1,127 @@
-.header{
-    margin: 0;
-    display: flex;
-    background-color: rgb(229, 240, 247);
-}
-img{
-    width: 88px;
-    height: auto;
-    padding-left: 30px;
-    padding-top: 4px;
-    
-}
-h2{
-    display: block;
-    justify-content: center;
-    align-items: center;
-    padding-left: 500px;
-    color: rgb(129, 159, 250);
-}
-
-.header{
-  position: fixed;     /* ✅ freezes header */
+/* ---------- HEADER BASE ---------- */
+.header {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;          /* ✅ Pushes logo left, profile right */
+  background-color: rgb(229, 240, 247);
+  padding: 8px 30px;
+  position: fixed;                         /* ✅ Keep header visible */
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 999;        /* ✅ stays above other content */
-  background: rgb(228, 239, 244);   /* ✅ important! prevent transparency */
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* optional */
+  z-index: 999;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ---------- LOGO ---------- */
+.header .img img {
+  width: 88px;
+  height: auto;
+  padding-top: 4px;
+}
+
+/* ---------- CENTER TITLE ---------- */
+.header .cont {
+  flex: 1;                                 /* ✅ Keeps title centered */
+  display: flex;
+  justify-content: center;
+}
+.header .cont h2 {
+  color: rgb(129, 159, 250);
+  font-weight: 700;
+  font-size: 20px;
+  margin: 0;
+  text-align: center;
+}
+
+/* ---------- PROFILE SECTION ---------- */
+.header .profile-section {
+  margin-left: auto;                       /* ✅ Push to far right */
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-right: 10px;
+}
+
+/* Profile Button */
+.header .profile-btn {
+  background: rgb(129, 159, 250);
+  border: none;
+  color: white;
+  font-weight: 700;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.2s;
+}
+
+.header .profile-btn:hover {
+  background: rgb(100, 130, 240);
+}
+
+/* Dropdown caret icon */
+.header .dropdown-icon {
+  font-size: 12px;
+  color: #fff;
+}
+
+/* ---------- DROPDOWN MENU ---------- */
+.header .profile-dropdown {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  background: #fff;
+  min-width: 160px;
+  border-radius: 8px;
+  box-shadow: 0 8px 28px rgba(11, 20, 55, 0.12);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+/* Dropdown items */
+.header .profile-dropdown button {
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 12px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #0b1437;
+  transition: background 0.2s;
+}
+
+.header .profile-dropdown button:hover {
+  background: #f3f6ff;
+}
+
+/* Optional logout emphasis */
+.header .profile-dropdown .logout {
+  color: #b91c1c;
+  font-weight: 700;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  .header {
+    padding: 10px 16px;
+  }
+
+  .header .cont h2 {
+    font-size: 18px;
+  }
+
+  .header .profile-btn {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .header .profile-name {
+    display: none; /* hide name text on small screens */
+  }
 }

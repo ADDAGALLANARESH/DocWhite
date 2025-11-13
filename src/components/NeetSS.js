@@ -74,11 +74,12 @@ const Seat = () => {
   };
 
   return (
-    <>
-      <Header />
+    <div className="body">
+      <div className="body1">
+      
 
       <div className="seat-page">
-
+<Header />
         {/* ✅ Header */}
         <div className="seat-header">
           <p className="header-title">
@@ -251,11 +252,8 @@ const Seat = () => {
             </table>
           </div>
         )}
-      <Fotter />
-      </div>
-
       
-    </>
+      </div></div><Fotter /></div>
   );
 };
 

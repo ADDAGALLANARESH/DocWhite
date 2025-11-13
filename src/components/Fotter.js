@@ -1,7 +1,7 @@
 import React from "react";
 import "./Fotter.css";
 
-import { FaHandshake, FaInstagram, FaYoutube, FaTelegramPlane, FaLinkedinIn, FaFacebookF, FaPhone } from "react-icons/fa";
+import { FaHandshake, FaInstagram, FaYoutube, FaTelegramPlane, FaLinkedinIn, FaFacebookF, FaPhoneAlt } from "react-icons/fa";
 
 const Fotter = () => {
   return (
@@ -36,7 +36,7 @@ const Fotter = () => {
 
         {/* RIGHT - Phone Numbers */}
         <div className="footer-phone">
-          <FaPhone className="footer-phone-icon" />
+          <FaPhoneAlt className="footer-phone-icon" />
           <span>7097434567, 7097634567 (10 AM TO 7 PM)</span>
         </div>
 

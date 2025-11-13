@@ -98,6 +98,7 @@ console.log(mobile)
       if (!res.ok) throw new Error("Server error");
 
       const data = await res.json();
+      console.log("✅ Backend Response:", data);
       const status = data?.serviceResponse?.status;
       const message = data?.serviceResponse?.message;
       const doctorInfo = data?.doctor?.[0];

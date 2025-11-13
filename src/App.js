@@ -23,9 +23,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/otp" element={<ProtectedRoute><Otp /></ProtectedRoute>} />
-        <Route path="/NeetSS" element={<ProtectedRoute><NeetSS /></ProtectedRoute>} />
-        <Route path='/NeetPg' element={<ProtectedRoute><NeetPg /></ProtectedRoute>} />
-        <Route path='/dashboard' element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+        <Route path="/NeetSS" element={<NeetSS />} />
+        <Route path='/NeetPg' element={<NeetPg />} />
+        <Route path='/dashboard' element={<Dashboard />} />
       </Routes>
     </Router>
   );
