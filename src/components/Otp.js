@@ -104,16 +104,21 @@ console.log(mobile)
       const doctorInfo = data?.doctor?.[0];
 
       if (status === "Y" && doctorInfo) {
-        const { sessionToken, doctorId, firstName, lastName } = doctorInfo;
+        const { sessionToken, doctorId, firstName, lastName,emailStr,mobileNo } = doctorInfo;
 
         if (sessionToken) localStorage.setItem("sessionToken", sessionToken);
         if (doctorId) localStorage.setItem("doctorId", doctorId);
         if (firstName) localStorage.setItem("firstName", firstName);
         if (lastName) localStorage.setItem("lastName", lastName);
+        if (emailStr) localStorage.setItem("emailStr", emailStr);
+        if (mobileNo) localStorage.setItem("mobileNo", mobileNo)
 
 
         console.log(firstName);
         console.log(lastName);
+        console.log(mobileNo)
+        console.log(doctorId)
+        console.log(emailStr)
 
         navigate("/dashboard", { replace: true });
       } else {

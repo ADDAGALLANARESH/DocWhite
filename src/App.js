@@ -9,6 +9,7 @@ import NeetSS from './components/NeetSS';
 import NeetPg from './components/NeetPg';
 import Dashboard from './components/Dashboard';
 import ProtectedRoute from "./components/ProtectedRoute";
+import Profile from './components/Profile';
 
 function App() {
   useEffect(() => {
@@ -26,6 +27,7 @@ function App() {
         <Route path="/NeetSS" element={<NeetSS />} />
         <Route path='/NeetPg' element={<NeetPg />} />
         <Route path='/dashboard' element={<Dashboard />} />
+        <Route path='/profile' element={<Profile />}/>
       </Routes>
     </Router>
   );
