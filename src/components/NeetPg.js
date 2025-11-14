@@ -107,6 +107,14 @@ function NeetPg() {
               </div>
               {errors.name && <p className="error-text">{errors.name}</p>}
             </div>
+            <div className="form-field">
+              <label>Mobile Number *</label>
+              <div className="input-box">
+                <FaPhoneAlt className="input-icon" />
+                <input type="tel" name="mobile" value={formData.mobile} onChange={handleChange} placeholder="Mobile Number" />
+              </div>
+              {errors.mobile && <p className="error-text">{errors.mobile}</p>}
+            </div>
 
             {/* EMAIL */}
             <div className="form-field">
@@ -116,16 +124,6 @@ function NeetPg() {
                 <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Email" />
               </div>
               {errors.email && <p className="error-text">{errors.email}</p>}
-            </div>
-
-            {/* MOBILE */}
-            <div className="form-field">
-              <label>Mobile Number *</label>
-              <div className="input-box">
-                <FaPhoneAlt className="input-icon" />
-                <input type="tel" name="mobile" value={formData.mobile} onChange={handleChange} placeholder="Mobile Number" />
-              </div>
-              {errors.mobile && <p className="error-text">{errors.mobile}</p>}
             </div>
 
             {/* RANK */}
@@ -151,6 +149,25 @@ function NeetPg() {
                 </select>
               </div>
               {errors.course && <p className="error-text">{errors.course}</p>}
+            </div>
+            <div className="form-field">
+              <label>Select State *</label>
+              <div className="input-box">
+                <FaUniversity className="input-icon" />
+                <select name="state" value={formData.state} onChange={handleChange}>
+                  <option value="">Select State</option>
+                  {[
+                    "Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh",
+                    "Goa","Gujarat","Haryana","Himachal Pradesh","Jharkhand","Karnataka",
+                    "Kerala","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram",
+                    "Nagaland","Odisha","Punjab","Rajasthan","Sikkim","Tamil Nadu",
+                    "Telangana","Tripura","Uttar Pradesh","Uttarakhand","West Bengal",
+                  ].map((state) => (
+                    <option key={state} value={state}>{state}</option>
+                  ))}
+                </select>
+              </div>
+              {errors.state && <p className="error-text">{errors.state}</p>}
             </div>
 
             {/* SPECIALIZATION */}
@@ -185,25 +202,7 @@ function NeetPg() {
             </div>
 
             {/* STATE */}
-            <div className="form-field">
-              <label>Select State *</label>
-              <div className="input-box">
-                <FaUniversity className="input-icon" />
-                <select name="state" value={formData.state} onChange={handleChange}>
-                  <option value="">Select State</option>
-                  {[
-                    "Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh",
-                    "Goa","Gujarat","Haryana","Himachal Pradesh","Jharkhand","Karnataka",
-                    "Kerala","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram",
-                    "Nagaland","Odisha","Punjab","Rajasthan","Sikkim","Tamil Nadu",
-                    "Telangana","Tripura","Uttar Pradesh","Uttarakhand","West Bengal",
-                  ].map((state) => (
-                    <option key={state} value={state}>{state}</option>
-                  ))}
-                </select>
-              </div>
-              {errors.state && <p className="error-text">{errors.state}</p>}
-            </div>
+            
 
             {/* CATEGORY */}
             <div className="form-field">

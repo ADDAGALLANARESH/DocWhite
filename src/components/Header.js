@@ -5,12 +5,17 @@ import "./Header.css";
 const Header = () => {
   const [open, setOpen] = useState(false);
   const [doctorName, setDoctorName] = useState("Doctor");
+  const [doctorId, setDoctorId] = useState("");
   const dropdownRef = useRef(null);
   const navigate = useNavigate();
 
   useEffect(() => {
     const firstName = localStorage.getItem("firstName") || "";
     const lastName = localStorage.getItem("lastName") || "";
+    const storedDoctorId = localStorage.getItem("doctorId") || "";
+
+    setDoctorId(storedDoctorId);
+
     if (firstName || lastName) {
       setDoctorName(`${firstName} ${lastName}`.trim());
     }
@@ -21,11 +26,31 @@ const Header = () => {
         setOpen(false);
       }
     };
+
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const handleLogout = () => {
+  // ✅ LOGOUT WITH FETCH API
+  const handleLogout = async () => {
+    try {
+      
+
+      await fetch("https://svcdev.whitecoats.com/WhiteCoatsCore/doctor/logout", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          
+        },
+        body: JSON.stringify({
+          doctorId: doctorId,
+        }),
+      });
+    } catch (error) {
+      console.error("Logout failed:", error);
+    }
+
+    // Clear data and redirect same as before
     localStorage.clear();
     navigate("/", { replace: true });
   };

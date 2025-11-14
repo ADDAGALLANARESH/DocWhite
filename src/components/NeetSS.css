@@ -60,7 +60,14 @@ body{
   font-size: 18px;        /* ✅ same size */
   font-weight: 700;
 }
-
+/* .form-container1{
+  width: 100%;
+  max-width: 1200px;
+  background: #a7bee7;
+  padding-top: 0;
+  padding: 40px;
+  margin: 30px auto;
+} */
 
 /* MAIN FORM CARD */
 .form-container {
