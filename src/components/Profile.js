@@ -24,7 +24,7 @@ const Profile = () => {
       <table className="payment-table">
         <tbody>
           <tr>
-            <th>DoctorID:</th>
+            <th>StudentID:</th>
             <td>{doctorId}</td>
           </tr>
           <tr>
