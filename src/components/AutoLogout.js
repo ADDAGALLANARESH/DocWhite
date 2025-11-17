@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
  
 const AutoLogout = ({ children }) => {
   const timerRef = useRef(null);
-  const timeout = 120000; // 2 minutes
+  const timeout = 60000; // 2 minutes
   const location = useLocation();
  
   // Stop auto-logout on login page
